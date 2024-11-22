@@ -1,0 +1,233 @@
+---
+title: "¿Qué onda con el R"
+session: "R-Ladies San Cristóbal MX- Villahermosa"
+author: "Anahí Canedo Téxon"
+institute: "ECOSUR Unidad Villahermosa | Dept. Ecología Evolutiva y Conservación, Bioinformática"
+subtitle: 
+date: "14 de noviembre 2024"
+output:
+   xaringan::moon_reader:
+    css: 
+      - default
+      - css/mi-tema.css
+      - rladies
+      - rladies-fonts
+    #seal: false
+    self_contained: true
+
+---
+# TODOS LO ODIAN O TODOS LO AMAN
+![](Figuras/RLOVE.png)
+---
+
+## Historia
+* R es un lenguaje de programación creado por los estadísticos Ross Ihaka y Robert Gentleman en 1996. ![](Figuras/Fig_03.png)
+
+---
+## ¿Porqué usamos R?
+
+* R, es software libre,gratuito
+
+* La sintaxis de R es muy simple e intuitiva
+
+* **CÓDIGO ABIERTO** Licencia GNU:Libertad del uso, modificación y distribución del software.
+
+* R se utiliza para el análisis de datos cuantitativos y cualitativos en diferentes disciplinas. Por ejemplo: [Aplicaciones del R](https://docs.google.com/presentation/d/1Zl64WJvlOn16qjzfF9xmdIpGAjvuZCwdof2xzzpHzb4/edit?usp=sharing)
+
+* Permite además desarrollo de software especializado, por ello, la gran diversidad de paquetes.
+
+---
+## ------------------ COMUNIDAD DE R------------------ ##
+## R-Community: https://r-community.org/usergroups/
+## CDBS: https://comunidadbioinfo.github.io/es/ 
+
+![](Figuras/RGlobal.png)
+---
+# ¿Qué es y quienes son R-Ladies?   
+Dale click: [ChismeTime](https://ecosur365p-my.sharepoint.com/:p:/g/personal/anahi_canedo_ecosur_mx/ES4ppuC5NApBgfo50CfYzWEBHkL56EcmBxDQDV5fUMCZMA?e=eyAhg9)
+---
+Pero antes...
+# ¿Cómo funciona la programación?  
+- *Lógica de la programación explicado con "Scratch"*
+# Imparte: María José Mondragón.
+Dale click: [Scratch](https://ecosur365p-my.sharepoint.com/:p:/r/personal/anahi_canedo_ecosur_mx/_layouts/15/Doc.aspx?sourcedoc=%7B6BD0338F-99C6-492D-9777-092E1E751436%7D&file=L%C3%B3gica%20de%20programaci%C3%B3n%20con%20Scratch.pptx&action=edit&mobileredirect=true&DefaultItemOpen=1)
+---
+## ¿Cómo funciona R?  
+
+* R es un lenguaje Orientado a Objetos.  
+
+![](Figuras/Fig_01.png){width='80%'height=80%} 
+
+---
+## R y Rstudio 
+**R** es el lenguaje de programación 
+-  [R](https://cran.r-project.org/). 
+
+-  [RStudio](https://posit.co/download/rstudio-desktop/).   
+
+RStudio Desktop es una aplicación de desarrollo de RStudio Inc. Esta app funciona como un entorno de desarrollo integrado (IDE), proporcionando a los usuarios herramientas optimizadas para el lenguaje de programación R. Permite construir scripts, compilar códigos, crear gráficos e incluso trabajar con varios conjuntos de datos en un entorno altamente capacitado.   
+
+**Generación de Proyectos para Desarrollo de Software **   
+
+- La versión de escritorio de RStudio permite optimizar el espacio de trabajo almacenando y organizando los datos en proyectos. Además, ofrece una consola y un editor completo que son limpios y fáciles de navegar.
+
+---
+## Interfaz de R Studio   
+
+![](Figuras/Fig_08.png)
+---
+## R Base y Paquetes
+**R base**  
+* Las funciones disponibles viven en el R HOME es el directorio donde R esta instalado. * **R Base** contiene las funciones básicas del lenguaje para leer y manipular datos, algunas funciones gráficas y algunas funciones estadísticas (regresión lineal y análisis de varianza).  
+
+**CRAN**: **Comprehensive R Archive Network (CRAN)**
+* Los archivos necesarios para instalar R, código fuente, las instrucciones de instalación, etc
+* Actualmente hay ~20,000 paquetes depositados en el CRAN, otros en BioConductor y GitHub.
+
+
+**Biocondutor**
+Se enfoca al desarrollo y distribución de paquetes de R destinados al anáiisis de datos genómicos, incluyendo herramientas para manipular datos de microarreglos, NGS, single cell genomics, etc. 
+---
+# ¿Cómo instalar un paquete del CRAN? 
+- Ejemplo: Sí queremos programar una aplicación web usando las shiny apps:  
+- Instalar el paquete "shiny" 
+```{r}
+# install.packages("shiny")
+```
+- Para usar ese paquete necesitamos "activarlo", entonces:
+```{r}
+# library(shiny)
+```
+---
+# 1.¿Qué son los objetos y cuántos tipos hay para el R? 
+---
+![](Figuras/simples.png)
+---
+![](Figuras/complejos.png)
+
+---
+**¿Cómo crear un objeto?**: Para crear nuevos objetos se denotado con el símbolo “->” o “<-”, incluso con "=".
+
+```{r}
+a<-20
+20 -> a
+a=20
+
+```   
+---
+## R cómo calculadora    
+
+**Operaciones simples**
+```{r}
+8+9 #sumas
+1000-84 #restas
+200/9 #división
+5*10 #multiplicación
+10^2 #exponenciales
+```   
+---
+**Almacenar valores numéricos en un objeto:** 
+```{r}
+a=10
+b=50
+c=2
+```   
+
+**Operaciones con objetos**
+```{r}
+sum(a+b+c)
+(a+b)^c
+```
+---
+**Enlistar los objetos en el entorno**
+```{r}
+ls()
+objects()
+```
+
+**Borrar objetos**
+```{r}
+rm(color1)
+ls()
+```
+**Los comentarios en R**
+```{r}
+# Esto en un comentario
+
+```
+---
+# Consultar el manual de ayuda en R de las funciones
+**Funciones para operaciones numéricas:**
+```{r}
+?ls()
+?sum()
+?sqrt()
+?mean()
+?median()
+```
+---
+# ¡Manos a la compu! 
+1.Crea 5 objetos numéricos de 3 dígitos  
+2.Obten la suma de los objetos que creaste  
+3.Guarda el resultado de cada operación en un objeto  
+4.El resultado multiplicalo por el número 2
+---
+# ¿DÓNDE ESTÁN MIS ARCHIVOS?
+![](Figuras/ubicaciones.png) 
+
+## No te compliques sólo aprendete lo siguiente:
+
+---
+*Obtener la ruta de trabajo actual:*
+```{r}
+getwd()
+```
+*Establecer ruta de trabajo nueva, siempre autocompletar con "tab"*
+```{r}
+#setwd()
+```
+*Por ejemplo quiero entrar al directorio de documentos:*
+```{r}
+setwd("/home/anahicanedo/Documentos/")
+```
+*No olvides comfirmar que se realizó el cambio*
+```{r}
+#getwd()
+```
+---
+# ¡Manos a la compu! 
+- ¿En qué directorio estás tú?
+```{r}
+#getwd()
+```
+- Cambia tu directorio al que tú quieras
+```{r}
+# setwd("ATUTOCOMPLETA")
+```
+---
+# Cargar un archivo
+- Para este ejercico utilizaremos una base de datos precargada en R. Para acceder:
+```{r}
+data("PlantGrowth")
+```
+- Observa que ya está en tu ambiente
+- Vamos a "descargar" el archivo a nuestra computadora:
+```{r}
+write.csv(PlantGrowth, "archivo_nuevo.csv")
+```
+- Busca el archivo que acaba de crear en tu directorio de trabajo actual 
+- Para cargar archivos de tu computadora al R, debes transformarlos a "csv" y luego:
+```{r}
+data <- read.csv("archivo_nuevo.csv")
+```
+* Recuerda autocompletar con "tab"(tu mejor amigo)
+---
+- **¿Quieres seguir aprendiendo?**   
+
+Dale click en el siguiente enlace:
+[Github RLadies](https://github.com/rladies/recursos_en_espanol )
+---
+# Gracias por tu asistencia   
+#¡Te esperamos en el siguiente meetup!   
+![](Figuras/organizadoras.jpg) 
+---
